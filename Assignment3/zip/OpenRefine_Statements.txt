@@ -1,0 +1,418 @@
+[
+  {
+    "op": "core/column-removal",
+    "description": "Remove column geo_fips",
+    "columnName": "geo_fips"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column geo_level",
+    "columnName": "geo_level"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column NCHS_disclaimer",
+    "columnName": "NCHS_disclaimer"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column suggested_citation",
+    "columnName": "suggested_citation"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column state_fips",
+    "columnName": "state_fips"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column map_indicator",
+    "columnName": "map_indicator"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column data_indicator",
+    "columnName": "data_indicator"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column census_parent_shape_year",
+    "columnName": "census_parent_shape_year"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column county_indicator",
+    "columnName": "county_indicator"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column agg_indicator",
+    "columnName": "agg_indicator"
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column num using expression grel:value.replace('-999','NA')",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Opioid Overdose Deaths",
+                "l": "Opioid Overdose Deaths"
+              }
+            },
+            {
+              "v": {
+                "v": "Colorectal Cancer Deaths",
+                "l": "Colorectal Cancer Deaths"
+              }
+            },
+            {
+              "v": {
+                "v": "Firearm Suicides",
+                "l": "Firearm Suicides"
+              }
+            },
+            {
+              "v": {
+                "v": "Breast Cancer Deaths",
+                "l": "Breast Cancer Deaths"
+              }
+            },
+            {
+              "v": {
+                "v": "Premature Deaths (All Causes)",
+                "l": "Premature Deaths (All Causes)"
+              }
+            },
+            {
+              "v": {
+                "v": "Cardiovascular Disease Deaths",
+                "l": "Cardiovascular Disease Deaths"
+              }
+            },
+            {
+              "v": {
+                "v": "Diabetes",
+                "l": "Diabetes"
+              }
+            },
+            {
+              "v": {
+                "v": "High Blood Pressure",
+                "l": "High Blood Pressure"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "metric_name",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "metric_name"
+        }
+      ]
+    },
+    "columnName": "num",
+    "expression": "grel:value.replace('-999','NA')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column denom using expression grel:value.replace('-999','NA')",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Opioid Overdose Deaths",
+                "l": "Opioid Overdose Deaths"
+              }
+            },
+            {
+              "v": {
+                "v": "Colorectal Cancer Deaths",
+                "l": "Colorectal Cancer Deaths"
+              }
+            },
+            {
+              "v": {
+                "v": "Firearm Suicides",
+                "l": "Firearm Suicides"
+              }
+            },
+            {
+              "v": {
+                "v": "Breast Cancer Deaths",
+                "l": "Breast Cancer Deaths"
+              }
+            },
+            {
+              "v": {
+                "v": "Premature Deaths (All Causes)",
+                "l": "Premature Deaths (All Causes)"
+              }
+            },
+            {
+              "v": {
+                "v": "Cardiovascular Disease Deaths",
+                "l": "Cardiovascular Disease Deaths"
+              }
+            },
+            {
+              "v": {
+                "v": "Diabetes",
+                "l": "Diabetes"
+              }
+            },
+            {
+              "v": {
+                "v": "High Blood Pressure",
+                "l": "High Blood Pressure"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "metric_name",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "metric_name"
+        }
+      ]
+    },
+    "columnName": "denom",
+    "expression": "grel:value.replace('-999','NA')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column num",
+    "columnName": "num"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column denom",
+    "columnName": "denom"
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column lci using expression grel:value.replace(-999,'NA')",
+    "engineConfig": {
+      "mode": "record-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Opioid Overdose Deaths",
+                "l": "Opioid Overdose Deaths"
+              }
+            },
+            {
+              "v": {
+                "v": "Colorectal Cancer Deaths",
+                "l": "Colorectal Cancer Deaths"
+              }
+            },
+            {
+              "v": {
+                "v": "Firearm Suicides",
+                "l": "Firearm Suicides"
+              }
+            },
+            {
+              "v": {
+                "v": "Breast Cancer Deaths",
+                "l": "Breast Cancer Deaths"
+              }
+            },
+            {
+              "v": {
+                "v": "Premature Deaths (All Causes)",
+                "l": "Premature Deaths (All Causes)"
+              }
+            },
+            {
+              "v": {
+                "v": "Cardiovascular Disease Deaths",
+                "l": "Cardiovascular Disease Deaths"
+              }
+            },
+            {
+              "v": {
+                "v": "Diabetes",
+                "l": "Diabetes"
+              }
+            },
+            {
+              "v": {
+                "v": "High Blood Pressure",
+                "l": "High Blood Pressure"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "metric_name",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "metric_name"
+        },
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Total",
+                "l": "Total"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "group_name",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "group_name"
+        },
+        {
+          "mode": "text",
+          "invert": true,
+          "caseSensitive": false,
+          "query": "NA",
+          "name": "est",
+          "type": "text",
+          "columnName": "est"
+        }
+      ]
+    },
+    "columnName": "lci",
+    "expression": "grel:value.replace(-999,'NA')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column uci using expression grel:value.replace(-999,'NA')",
+    "engineConfig": {
+      "mode": "record-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Opioid Overdose Deaths",
+                "l": "Opioid Overdose Deaths"
+              }
+            },
+            {
+              "v": {
+                "v": "Colorectal Cancer Deaths",
+                "l": "Colorectal Cancer Deaths"
+              }
+            },
+            {
+              "v": {
+                "v": "Firearm Suicides",
+                "l": "Firearm Suicides"
+              }
+            },
+            {
+              "v": {
+                "v": "Breast Cancer Deaths",
+                "l": "Breast Cancer Deaths"
+              }
+            },
+            {
+              "v": {
+                "v": "Premature Deaths (All Causes)",
+                "l": "Premature Deaths (All Causes)"
+              }
+            },
+            {
+              "v": {
+                "v": "Cardiovascular Disease Deaths",
+                "l": "Cardiovascular Disease Deaths"
+              }
+            },
+            {
+              "v": {
+                "v": "Diabetes",
+                "l": "Diabetes"
+              }
+            },
+            {
+              "v": {
+                "v": "High Blood Pressure",
+                "l": "High Blood Pressure"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "metric_name",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "metric_name"
+        },
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Total",
+                "l": "Total"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "group_name",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "group_name"
+        },
+        {
+          "mode": "text",
+          "invert": true,
+          "caseSensitive": false,
+          "query": "NA",
+          "name": "est",
+          "type": "text",
+          "columnName": "est"
+        }
+      ]
+    },
+    "columnName": "uci",
+    "expression": "grel:value.replace(-999,'NA')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  }
+]
